@@ -1,0 +1,20 @@
+
+body {
+    background-color: black;
+    color:aliceblue
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #9b1f1f;
+}
