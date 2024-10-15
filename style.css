@@ -4,17 +4,13 @@ body {
     color:aliceblue
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid white;
-    padding: 8px;
-    text-align: left;
-}
-
-tr:nth-child(even) {
-    background-color: #9b1f1f;
+.telaCadastro {
+    width: 200px;
+    margin: 0 auto;
+    border: 1px solid green;
+    padding: 10px;
+   /*  text-align: center; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }

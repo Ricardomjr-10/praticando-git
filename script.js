@@ -1,2 +1,20 @@
-const tabela = document.querySelector('table')
-const dados = document.querySelectorAll('td')
+
+const buttonGravar = document.querySelector('.gravar')
+
+let cliente = []
+
+buttonGravar.addEventListener('click', () => {
+
+    const email = document.querySelector('.email').value
+    const tel = document.querySelector('.tel').value
+    const nome = document.querySelector('.nome').value
+
+    novoCliente = {
+        nome,
+        email,
+        tel
+    }
+
+    cliente.push(novoCliente)
+    console.log(cliente)
+})
