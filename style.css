@@ -14,3 +14,11 @@ body {
     flex-direction: column;
     gap: 5px;
 }
+
+.telaCadastro {
+    display: none;
+}
+
+.telaCadastroProduto {
+    display: none;
+}
