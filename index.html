@@ -8,19 +8,20 @@
 </head>
 <body>
     <div class="container">
-        <button>Cadastro de Clientes</button>
-        <button>Cadastro de Produtos</button>
+        <button class="bCliente">Cadastro de Clientes</button>
+        <button class="bProduto">Cadastro de Produtos</button>
         <div class="telaCadastro tela">
             <input type="text" class="nome" placeholder="Nome">
             <input type="email" class="email" placeholder="email">
             <input type="tel" class="tel" placeholder="Telefone">
-            <button class="gravar">Adicionar</button>
+            <button class="gravarC wBtn">Adicionar</button>
         </div>
         <div class="telaCadastroProduto tela">
             <input type="text" class="descricao" placeholder="descricao">
             <input type="number" class="estoque" placeholder="estoque">
-            <button class="gravar">Adicionar</button>
+            <button class="gravarP wBtn">Adicionar</button>
         </div>
+        <div class="msg" style="display: none;"></div>
     </div>
     <script src="script.js"></script>
 </body>
