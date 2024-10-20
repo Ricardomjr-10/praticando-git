@@ -1,6 +1,8 @@
 
 const buttonGravar = document.querySelector('.gravarC')
 const buttonGravarP = document.querySelector('.gravarP')
+const mostrarClientes = document.querySelector('.mostrarClientes')
+const mostrarProdutos = document.querySelector('.mostrarProdutos')
 const bCliente = document.querySelector('.bCliente')
 const bProduto = document.querySelector('.bProduto')
 const telaCadastro = document.querySelector('.telaCadastro')
@@ -48,18 +50,8 @@ buttonGravar.addEventListener('click', (event) => {
 
     limpar('.email', '.nome', '.tel')
 
-    tabela.innerHTML = `<table>
-            <tr>
-                <th>nome</th>
-                <th>email</th>
-                <th>Telefone</th>
-            </tr>
-            <tr>
-                <td>${clientes[0].nome}</td>
-                <td>${clientes[0].email}</td>
-                <td>${clientes[0].tel}</td>
-            </tr>
-        </table>`
+
+
    
 })
 
@@ -97,4 +89,37 @@ const limpar = (nome1, nome2 ,nome3) => {
     document.querySelector(nome2).value = ""
     document.querySelector(nome3).value = ""
     
+}
+
+mostrarClientes.addEventListener('click', () => {
+    criarTabela(clientes, tabela)
+})
+
+mostrarProdutos.addEventListener('click', () => {
+    criarTabela(produtos, tabela)
+})
+
+//fucncao para criar a tabel
+const criarTabela = (dados, elementoPai) => {
+    //criar a tag tabela
+    const tabela = document.createElement('table')
+
+    //criar a linha do cabeçalho - th
+    const linhaCabecalho = tabela.insertRow()
+    for (const propriedade in dados[0]) {
+        const celula = linhaCabecalho.insertCell()
+        celula.textContent = propriedade
+    }
+
+    //criar as linha de dados
+    dados.forEach(objeto => {
+        const linha = tabela.insertRow()
+        for (const propriedade in objeto) {
+            const celula = linha.insertCell()
+            celula.textContent = objeto[propriedade]
+        }
+    });
+
+    //adiciona a tabela ao elemento pai
+    elementoPai.appendChild(tabela)
 }
