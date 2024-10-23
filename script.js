@@ -8,18 +8,25 @@ const bProduto = document.querySelector('.bProduto')
 const telaCadastro = document.querySelector('.telaCadastro')
 const telaCadastroProduto = document.querySelector('.telaCadastroProduto')
 const msg = document.querySelector('.msg')
-const tabela = document.querySelector('.tabela')
+const tabela1 = document.querySelector('.tabela1')
+const tabela2 = document.querySelector('.tabela2')
 
 bCliente.addEventListener('click', () => {
     telaCadastro.style.display = 'block'
     telaCadastroProduto.style.display = 'none'
     msg.style.display = 'none'
+    tabela1.textContent = ''
+     tabela2.textContent = ''
+    mostrarClientes.disabled = false
 })
 
 bProduto.addEventListener('click', () => {
     telaCadastroProduto.style.display = 'block'
     telaCadastro.style.display = 'none'
     msg.style.display = 'none'
+    tabela1.textContent = ''
+     tabela2.textContent = ''
+    mostrarProdutos.disabled = false
 })
 
 let clientes = []
@@ -78,9 +85,10 @@ buttonGravarP.addEventListener('click', () => {
     console.log(produtos)
 
     limpar('.produto', '.quantidade', '.quantidade')
+
+   
     
 })
-
 
 
 
@@ -92,11 +100,27 @@ const limpar = (nome1, nome2 ,nome3) => {
 }
 
 mostrarClientes.addEventListener('click', () => {
-    criarTabela(clientes, tabela)
+    if (clientes.length === 0) {
+        alert('Nenhum cliente cadastrado')
+        return
+    }
+    criarTabela(clientes, tabela1)
+     telaCadastroProduto.style.display = 'none'
+    telaCadastro.style.display = 'none'
+    mostrarClientes.disabled = true
+    tabela2.textContent = ''
 })
 
 mostrarProdutos.addEventListener('click', () => {
-    criarTabela(produtos, tabela)
+    if (produtos.length === 0) {
+        alert('Nenhum produto cadastrado')
+        return
+    }
+    criarTabela(produtos, tabela2)
+     telaCadastroProduto.style.display = 'none'
+    telaCadastro.style.display = 'none'
+    mostrarProdutos.disabled = true
+    tabela1.textContent = ''
 })
 
 //fucncao para criar a tabel
