@@ -1,6 +1,6 @@
 
 body {
-    background-color: black;
+    background-image: linear-gradient(45deg, rgb(248, 141, 203) 80%, black 20%);
     color:aliceblue
 }
 
@@ -42,4 +42,21 @@ body {
 table, th, td {
     border: 1px solid blue;
     margin: auto;
+}
+
+.bt-tela {
+    width: 220px;
+    height: 75px;
+    border-radius: 25px;
+    font-size: 20px;
+    border: 1px solid white;
+    box-shadow: 1px 1px 5px;
+}
+
+.bt-tela:hover {
+    width: 224px;
+    height: 76px;
+    box-shadow: 1px 1px 20px white;
+    color: palevioletred;
+    font-weight: 600;
 }
