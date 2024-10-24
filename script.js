@@ -16,7 +16,7 @@ bCliente.addEventListener('click', () => {
     telaCadastroProduto.style.display = 'none'
     msg.style.display = 'none'
     tabela1.textContent = ''
-     tabela2.textContent = ''
+    tabela2.textContent = ''
     mostrarClientes.disabled = false
 })
 
@@ -25,7 +25,7 @@ bProduto.addEventListener('click', () => {
     telaCadastro.style.display = 'none'
     msg.style.display = 'none'
     tabela1.textContent = ''
-     tabela2.textContent = ''
+    tabela2.textContent = ''
     mostrarProdutos.disabled = false
 })
 
@@ -33,7 +33,7 @@ let clientes = []
 
 buttonGravar.addEventListener('click', (event) => {
 
-  
+
     let email = document.querySelector('.email').value
     let tel = document.querySelector('.tel').value
     let nome = document.querySelector('.nome').value
@@ -44,7 +44,7 @@ buttonGravar.addEventListener('click', (event) => {
         return
     }
 
-     msg.style.display = 'none'
+    msg.style.display = 'none'
 
     novoCliente = {
         nome,
@@ -57,9 +57,6 @@ buttonGravar.addEventListener('click', (event) => {
 
     limpar('.email', '.nome', '.tel')
 
-
-
-   
 })
 
 let produtos = []
@@ -67,6 +64,7 @@ let produtos = []
 buttonGravarP.addEventListener('click', () => {
     let produto = document.querySelector('.produto').value
     let quantidade = document.querySelector('.quantidade').value
+    let preco = document.querySelector('.preco').value
 
     if (produto == '') {
         msg.style.display = 'block'
@@ -78,25 +76,24 @@ buttonGravarP.addEventListener('click', () => {
 
     novoProduto = {
         produto,
-        quantidade
+        quantidade,
+        preco
     }
 
     produtos.push(novoProduto)
     console.log(produtos)
 
-    limpar('.produto', '.quantidade', '.quantidade')
+    limpar('.produto', '.quantidade', '.preco')
 
-   
-    
 })
 
 
 
-const limpar = (nome1, nome2 ,nome3) => {
+const limpar = (nome1, nome2, nome3) => {
     document.querySelector(nome1).value = ""
     document.querySelector(nome2).value = ""
     document.querySelector(nome3).value = ""
-    
+
 }
 
 mostrarClientes.addEventListener('click', () => {
@@ -105,7 +102,7 @@ mostrarClientes.addEventListener('click', () => {
         return
     }
     criarTabela(clientes, tabela1)
-     telaCadastroProduto.style.display = 'none'
+    telaCadastroProduto.style.display = 'none'
     telaCadastro.style.display = 'none'
     mostrarClientes.disabled = true
     tabela2.textContent = ''
@@ -117,7 +114,7 @@ mostrarProdutos.addEventListener('click', () => {
         return
     }
     criarTabela(produtos, tabela2)
-     telaCadastroProduto.style.display = 'none'
+    telaCadastroProduto.style.display = 'none'
     telaCadastro.style.display = 'none'
     mostrarProdutos.disabled = true
     tabela1.textContent = ''
